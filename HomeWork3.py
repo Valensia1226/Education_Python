@@ -3,11 +3,10 @@ def Fibonacci(n):
     elif n == 1 or n == 2: return 1
     else: return Fibonacci(n - 1) + Fibonacci(n - 2)
 
-
 def Task1(N):
     data = list()
     i = 0
-    for i in range(i, N):
+    for i in range(i, N + 1):
         data.append(Fibonacci(i))
     print(data)
 
