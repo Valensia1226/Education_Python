@@ -44,6 +44,7 @@ def Task3():
         if flag == False:
             print('Я не знаю, что с этим делать. Что мне нужно ответить?')
             answer = input().lower()
+            if question[-1] == '!': question = question[:len(question) - 1]
             data.write('\n' + question + ':' + answer)
             print('Спасибо! Я это запомню. Скажи что-нибудь еще!')
 
