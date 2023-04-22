@@ -3,11 +3,10 @@ def Fibonacci(n):
     elif n == 1 or n == 2: return 1
     else: return Fibonacci(n - 1) + Fibonacci(n - 2)
 
-
 def Task1(N):
     data = list()
     i = 0
-    for i in range(i, N):
+    for i in range(i, N + 1):
         data.append(Fibonacci(i))
     print(data)
 
@@ -44,7 +43,7 @@ def Task3():
         if flag == False:
             print('Я не знаю, что с этим делать. Что мне нужно ответить?')
             answer = input().lower()
-            if question[-1] == '!': question = question[:len(question) - 1]
+            if question[-1] == '!': question = question[:len(question) - 1] #чтобы в дальшейшем работала проверка на восклицательный знак в конце строки
             data.write('\n' + question + ':' + answer)
             print('Спасибо! Я это запомню. Скажи что-нибудь еще!')
 
