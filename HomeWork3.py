@@ -19,18 +19,21 @@ def Task2(a):
         if el[0] == a: choice.append(el)
     print(f'{a} - > {choice}')
 
-def Task3():
-    data = open('test.txt', 'r+', encoding='utf-8')
+def OpenFile(name = 'test.txt'):
+    data = open(name, 'r+', encoding='utf-8')
     text = data.readlines()
     bot = {}
     for i in range(len(text)):
         phrase = text[i].split(':')
         bot[phrase[0]] = phrase[1]
+    data.close()
+    return bot
 
+def Task3():
     print('Я не очень умный бот, но люблю общаться. Если захочешь завершить диалог, скажи "пока"')
     question = ''
-
     while question != 'пока':
+        bot = OpenFile()
         flag = False
         question = input().lower()
         for key, value in bot.items():
@@ -44,7 +47,9 @@ def Task3():
             print('Я не знаю, что с этим делать. Что мне нужно ответить?')
             answer = input().lower()
             if question[-1] == '!': question = question[:len(question) - 1] #чтобы в дальшейшем работала проверка на восклицательный знак в конце строки
+            data = open('test.txt', 'a', encoding='utf-8')
             data.write('\n' + question + ':' + answer)
+            data.close()
             print('Спасибо! Я это запомню. Скажи что-нибудь еще!')
 
-    data.close()
+Task3()
