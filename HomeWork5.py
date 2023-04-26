@@ -10,10 +10,9 @@ def Task2():
     numbers = [random.randint(1, 10) for _ in range(random.randint(5, 10))]
     num = list()
     n = random.choice(numbers) #выбираем случайное число из списка
-    num.append(n)
-    index = numbers.index(n) #определяем индекс этого числа, чтобы начать поиск по списку с него
+    num.append(n) #начинаем с него новый список
     print(numbers)
-    for i in range(index, len(numbers)):
+    for i in range(numbers.index(n), len(numbers)): #определяем индекс этого числа, чтобы начать поиск по списку с него
         if numbers[i] > num[-1]: num.append(numbers[i]) #сравниваем с последним добавленным в новый список
     print(num)
 
