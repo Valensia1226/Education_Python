@@ -16,7 +16,7 @@ def send_answer(message):
 	b = data.readline().split(":")
 	print(b[1])
 	answer = input('Введите ответ: ')
-	bot.reply_to(message.from_user.id, answer)
+	bot.send_message(message.from_user.id, answer)
 	data.close()
 
 @bot.message_handler(content_types=['text'])
