@@ -34,9 +34,10 @@ def greetings(message):
 	elif text > number:
 		bot.send_message(message.from_user.id, f'Мое число меньше. Попробуй еще или напиши "стоп", чтобы закончить')
 		counter.append(1)
+		print(len(counter))
 	elif text < number:
 		bot.send_message(message.from_user.id, f'Мое число больше. Попробуй еще или напиши "стоп", чтобы закончить')
 		counter.append(1)
-
+		print(len(counter))
 
 bot.polling()
